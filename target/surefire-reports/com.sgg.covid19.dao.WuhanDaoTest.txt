@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.sgg.covid19.dao.WuhanDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.086 s <<< FAILURE! - in com.sgg.covid19.dao.WuhanDaoTest
+testQueryWuhan(com.sgg.covid19.dao.WuhanDaoTest)  Time elapsed: 0.065 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_wuhan' doesn't exist
+### The error may exist in file [D:\covid19\target\classes\mapper\WuhanDao.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT date,new_case,total_case,new_death,total_death,new_cure,total_cure,         death_rate,cure_rate         FROM tb_wuhan
+### Cause: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_wuhan' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'covid19.tb_wuhan' doesn't exist
+	at com.sgg.covid19.dao.WuhanDaoTest.testQueryWuhan(WuhanDaoTest.java:18)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_wuhan' doesn't exist
+	at com.sgg.covid19.dao.WuhanDaoTest.testQueryWuhan(WuhanDaoTest.java:18)
+

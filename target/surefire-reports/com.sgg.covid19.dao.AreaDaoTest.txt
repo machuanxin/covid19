@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.sgg.covid19.dao.AreaDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.269 s <<< FAILURE! - in com.sgg.covid19.dao.AreaDaoTest
+testQueryArea(com.sgg.covid19.dao.AreaDaoTest)  Time elapsed: 1.874 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_area' doesn't exist
+### The error may exist in file [D:\covid19\target\classes\mapper\AreaDao.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT area_id,area_name         FROM tb_area
+### Cause: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_area' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'covid19.tb_area' doesn't exist
+	at com.sgg.covid19.dao.AreaDaoTest.testQueryArea(AreaDaoTest.java:18)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_area' doesn't exist
+	at com.sgg.covid19.dao.AreaDaoTest.testQueryArea(AreaDaoTest.java:18)
+

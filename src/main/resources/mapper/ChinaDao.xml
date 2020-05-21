@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgg.covid19.dao.ChinaDao">
+    <select id="queryChina" resultType="com.sgg.covid19.entity.China">
+        SELECT c_date,new_case,total_case,now_case,severe_change,
+        now_severe,new_death,total_death,death_rate,
+        new_cure,total_cure,cure_rate,new_suspect,now_suspect
+        FROM tb_china
+    </select>
+</mapper>

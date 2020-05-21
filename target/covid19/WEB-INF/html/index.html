@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../resources/js/echarts.js"></script>
+    <!--    <script src="../resources/js/jquery.min.js"></script>-->
+    <script src="../resources/js/china.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" media="screen">
+    <script src="../resources/js/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Lato, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.72222;
+            color: #34495e;
+            background-color: #fff;
+        }
+
+        .wrap {
+            min-width: 100%;
+            position: absolute;
+            background: #eff3f6 bottom;
+            min-height: 100%;
+            overflow: hidden;
+        }
+
+        .left {
+            margin-left: 0px;
+            position: absolute;
+            box-sizing: border-box;
+            width: 200px;
+            height: 100%;
+            background: #4d5e70 bottom;
+        }
+
+        .logoDiv {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            height: 70px;
+            background-color: #354457;
+            font-size: 17px;
+            color: #fff;
+            vertical-align: bottom;
+        }
+
+        .logoTitle {
+            margin-left: 15px;
+            line-height: 1.7;
+        }
+
+        .menu-title {
+            margin-left: 15px;
+            color: #828e9a;
+            padding-top: 5px;
+            padding-bottom: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .menu-item {
+            padding-left: 15px;
+            line-height: 40px;
+            height: 40px;
+            color: #aab1b7;
+            cursor: pointer;
+        }
+
+        .menu-item-active {
+            background-color: #3d4e60;
+            border-right: 4px solid #647f9d;
+            color: #fff;
+        }
+
+        .right {
+            /*box-sizing: border-box;*/
+            float: left;
+            overflow-x: hidden;
+            /*clear: both;*/
+            color: #717592;
+            min-width: 100%;
+            min-height: 500px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <!-- 左边内容 -->
+    <div id="left" class="left">
+        <div id="logoDiv" class="logoDiv">
+            <p id="logoTitle" class="logoTitle">
+                <span style="font-size:18px;">COVID-19可视化系统</span>
+            </p>
+        </div>
+        <div class="menu-title">疫情数据图表一</div>
+        <div class="menu-item" href="#one" data-toggle="tab">
+            －全国疫情图表
+        </div>
+        <div class="menu-item" href="#two" data-toggle="tab">
+            －重症病例图表
+        </div>
+        <div class="menu-item" href="#three" data-toggle="tab">
+            －死亡病例图表
+        </div>
+        <div class="menu-item" href="#four" data-toggle="tab">
+            －治愈病例图表
+        </div>
+        <div class="menu-item" href="#five" data-toggle="tab">
+            －疑似病例图表
+        </div>
+        <div class="menu-item" href="#six" data-toggle="tab">
+            －治愈率与死亡率图表
+        </div>
+        <div class="menu-title">省级行政区疫情图</div>
+        <div class="menu-item" href="#seven" data-toggle="tab">
+            －省级行政区疫情图
+        </div>
+        <div class="menu-title">援鄂医疗队</div>
+        <div class="menu-item" href="#eight" data-toggle="tab">
+            －援鄂医疗队流图
+        </div>
+        <div class="menu-item" href="#nine" data-toggle="tab">
+            －援鄂医疗队人数玫瑰图
+        </div>
+        <div class="menu-title">人口迁徙</div>
+        <div class="menu-item" id="moveCity" href="#ten" data-toggle="tab">
+            －离汉人口迁徙图表
+        </div>
+        <!--        <div class="menu-item" id="moveProvince" href="#eleven" data-toggle="tab">-->
+        <!--            －离汉人口迁徙图表(省份级别)-->
+        <!--        </div>-->
+    </div>
+    <!-- 右边内容 -->
+    <div id="right" class="tab-content right">
+        <div id="one" class="tab-pane active" style="padding-left:250px; ">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		 <div style="width: 900px;height:600px;margin: 50px;" id="case"></div>
+							</span>
+        </div>
+        <div id="two" class="tab-pane" style="padding-left:250px; ">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 900px;height:600px;margin: 50px;" id="severe"></div>
+							</span>
+        </div>
+        <div id="three" class="tab-pane" style="padding-left:250px; ">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 900px;height:600px;margin: 50px;" id="death"></div>
+							</span>
+        </div>
+        <div id="four" class="tab-pane" style="padding-left:250px; ">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 900px;height:600px;margin: 50px;" id="cure"></div>
+							</span>
+        </div>
+        <div id="five" class="tab-pane" style="padding-left:250px; ">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 900px;height:600px;margin: 50px;" id="suspect"></div>
+							</span>
+        </div>
+        <div id="six" class="tab-pane" style="padding-left:250px; ">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 900px;height:600px;margin: 50px;" id="rate"></div>
+							</span>
+        </div>
+        <div id="seven" class="tab-pane" style="padding-left:250px; ">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 900px;height:600px;margin: 50px;" id="province"></div>
+							</span>
+        </div>
+        <div id="eight" class="tab-pane" style="padding-left:200px;">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 1020px;height:657px;" id="aidMap"></div>
+							</span>
+        </div>
+        <div id="nine" class="tab-pane" style="padding-left:300px; ">
+							 <span style="ext-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 800px;height:700px;margin: 50px;" id="aidRose"></div>
+							</span>
+        </div>
+        <div id="ten" class="tab-pane" style="padding-left:200px; ">
+							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">
+							 		<div style="width: 1020px;height:657px;" id="move"></div>
+							</span>
+
+        </div>
+        <!--        <div id="eleven" class="tab-pane" style="padding-left:200px; ">-->
+        <!--							 <span style="text-shadow: 2px 0px 6px rgba(94, 35, 255, 0.91);">-->
+        <!--							 		<div style="width: 1020px;height:657px;" id="provinceMap"></div>-->
+        <!--							</span>-->
+
+        <!--        </div>-->
+    </div>
+    <div id="moveNum"
+         style="width: 300px;height: 660px;position: fixed; right:0;background-color: white;overflow-y:auto;display: none;">
+        <label style="margin-left: 30px; margin-top: 10px;">级别</label>
+        <select id="cityOrProvince" style="margin-left: 10px;">
+            <option value="0">城市</option>
+            <option value="1">省份</option>
+        </select>
+        <label style="margin-left: 10px; margin-top: 10px;">日期：</label>
+        <select id="moveDate">
+            <option value="0">1月1日</option>
+            <option value="1">1月2日</option>
+            <option value="2">1月3日</option>
+            <option value="3">1月4日</option>
+            <option value="4">1月5日</option>
+            <option value="5">1月6日</option>
+            <option value="6">1月7日</option>
+            <option value="7">1月8日</option>
+            <option value="8">1月9日</option>
+            <option value="9">1月10日</option>
+            <option value="10">1月11日</option>
+            <option value="11">1月12日</option>
+            <option value="12">1月13日</option>
+            <option value="13">1月14日</option>
+            <option value="14">1月15日</option>
+            <option value="15">1月16日</option>
+            <option value="16">1月17日</option>
+            <option value="17">1月18日</option>
+            <option value="18">1月19日</option>
+            <option value="19">1月20日</option>
+            <option value="20">1月21日</option>
+            <option value="21">1月22日</option>
+            <option value="22">1月23日</option>
+        </select>
+        <table class="table">
+            <thead>
+            <th>序号</th>
+            <th>城市</th>
+            <th>比例</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(".menu-item").click(function () {
+            $(".menu-item").removeClass("menu-item-active");
+            $(this).addClass("menu-item-active");
+            var itmeObj = $(".menu-item").find("img");
+            itmeObj.each(function () {
+                var items = $(this).attr("src");
+                items = items.replace("_grey.png", ".png");
+                items = items.replace(".png", "_grey.png")
+                $(this).attr("src", items);
+            });
+        });
+        $("#moveCity").click(function () {
+            $("#moveNum").show();
+        });
+        // $("#moveProvince").click(function () {
+        //     $("#moveNum").show();
+        // });
+    });
+</script>
+</body>
+<script src="../resources/js/chart.js"></script>
+</html>

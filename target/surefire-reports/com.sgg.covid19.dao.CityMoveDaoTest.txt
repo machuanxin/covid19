@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.sgg.covid19.dao.CityMoveDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.199 s <<< FAILURE! - in com.sgg.covid19.dao.CityMoveDaoTest
+testQueryCityMoveList(com.sgg.covid19.dao.CityMoveDaoTest)  Time elapsed: 0.171 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_city_move' doesn't exist
+### The error may exist in file [D:\covid19\target\classes\mapper\CityMoveDao.xml]
+### The error may involve com.sgg.covid19.dao.CityMoveDao.queryCityMove-Inline
+### The error occurred while setting parameters
+### SQL: SELECT m_date,city,rate         FROM tb_city_move         WHERE         m_date = ?
+### Cause: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_city_move' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'covid19.tb_city_move' doesn't exist
+	at com.sgg.covid19.dao.CityMoveDaoTest.testQueryCityMoveList(CityMoveDaoTest.java:19)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_city_move' doesn't exist
+	at com.sgg.covid19.dao.CityMoveDaoTest.testQueryCityMoveList(CityMoveDaoTest.java:19)
+

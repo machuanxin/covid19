@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.sgg.covid19.service.HubeiServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.101 s <<< FAILURE! - in com.sgg.covid19.service.HubeiServiceTest
+testGetChinaList(com.sgg.covid19.service.HubeiServiceTest)  Time elapsed: 0.075 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_hubei' doesn't exist
+### The error may exist in file [D:\covid19\target\classes\mapper\HubeiDao.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT date,new_case,total_case,new_death,total_death,new_cure,total_cure,         death_rate,cure_rate         FROM tb_hubei
+### Cause: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_hubei' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'covid19.tb_hubei' doesn't exist
+	at com.sgg.covid19.service.HubeiServiceTest.testGetChinaList(HubeiServiceTest.java:18)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'covid19.tb_hubei' doesn't exist
+	at com.sgg.covid19.service.HubeiServiceTest.testGetChinaList(HubeiServiceTest.java:18)
+

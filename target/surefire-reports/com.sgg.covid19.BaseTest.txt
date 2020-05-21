@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.sgg.covid19.BaseTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.268 s <<< FAILURE! - in com.sgg.covid19.BaseTest
+initializationError(com.sgg.covid19.BaseTest)  Time elapsed: 0.011 s  <<< ERROR!
+java.lang.Exception: No runnable methods
+

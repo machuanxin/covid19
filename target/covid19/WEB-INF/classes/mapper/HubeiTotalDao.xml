@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sgg.covid19.dao.HubeiTotalDao">
+    <select id="queryHubeiTotal" resultType="com.sgg.covid19.entity.HubeiTotal">
+        SELECT date,city,case_total
+        FROM tb_hubei_total
+     </select>
+</mapper>

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.sgg.covid19.dao.ChinaDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.119 s <<< FAILURE! - in com.sgg.covid19.dao.ChinaDaoTest
+testQueryChina(com.sgg.covid19.dao.ChinaDaoTest)  Time elapsed: 0.089 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[1]> but was:<[2.06]>
+	at com.sgg.covid19.dao.ChinaDaoTest.testQueryChina(ChinaDaoTest.java:19)
+
